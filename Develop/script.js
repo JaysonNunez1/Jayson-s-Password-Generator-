@@ -11,15 +11,15 @@ const uppercasedchars = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N'
 // Created a function for getting the users input.
 Passwordlength = prompt("How many characters in your password? Choose between 8 to 128 characters.");
   if (Passwordlength < 8 || Passwordlength > 128) {
-    return "Choose a valid number of characters.";
-  } else if (isNaN(Passwordlength)) {
-    Passwordlength = prompt("Please enter a valid number.");
+    return "Generated password";
   }
-  else {
-    alert("Your password will be " + Passwordlength + " characters length.");
-  }
+  
+  specialchars = confirm ("Do you want to include special characters?");
+  numberchars = confirm ("Do you want to include numbers?");
+  lowercasedchars = confirm ("Do you want to include lowercase charcters?");
+  uppercasedchars = confirm ("Do you want to include uppercase characters?");
 
-// Write password to the #password input
+  // Write password to the #password input
 function writePassword() {
   const password = generatePassword();
   const passwordText = document.querySelector("#password");
